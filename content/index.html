@@ -2,7 +2,20 @@
 
 [!- block main -!]
 
-<p>Hello, world</p>
+[! for file in files !]
+  [! if file.folder == "scripts" !]
+    <details>
+  <summary>[@ file.name @]</summary>
+  <pre class="code-block"><code>
+    [@- highlight_file("scripts/" + file.name)|safe -@]
+  </code></pre>
+    </details>
+  [! endif !]
+[! endfor !]
+
+<pre>
+[@ files|tojson(true) @]
+</pre>
 
 [!- endblock -!]
 

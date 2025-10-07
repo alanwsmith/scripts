@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Git Create Site 
+#
+# Creates a new GitHub repo with the given 
+# name from my simple site builder template 
+# and clones it down.
+
+gh repo new "$1" --public -p ssb-template --clone
